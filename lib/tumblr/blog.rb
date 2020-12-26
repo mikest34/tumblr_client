@@ -35,6 +35,10 @@ module Tumblr
         url = "#{url}/#{options[:type]}"
       end
 
+      if options.has_key?(:id)
+        url = "#{url}/#{options[:id]}"
+      end
+
       params = { :api_key => @consumer_key }
       params.merge! options
       get(url, params)
